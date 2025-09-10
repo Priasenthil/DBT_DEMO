@@ -7,8 +7,8 @@ with cte as(
     {{get_season('started_at')}} as season_type,
     {{get_period_type('started_at')}} as period_type
     from
-    {{ source('demo', 'bike') }}
-    where started_at != 'started_at'
+    {{ ref('stg_bike') }}
+    where started_at != 'started_at' and started_at != '"started_at"'
 )
 
 select 

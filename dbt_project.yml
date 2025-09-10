@@ -45,4 +45,6 @@ models:
     date_dimension:
       +materialized: table       
     station_dimension:
+      +materialized: table
+    trip_fact:
       +materialized: table  

@@ -7,8 +7,8 @@ start_station_name as station_name,
 start_lat,
 start_lng
 from
-{{ source('demo', 'bike') }}
-where ride_id != 'ride_id'
+{{ ref('stg_bike') }}
+where ride_id != '"bikeid"'
 )
 
 select 
